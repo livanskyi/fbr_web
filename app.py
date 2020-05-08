@@ -6,7 +6,7 @@ from RCNN_Model_executor import run_model
 from flask import Flask, render_template, redirect, url_for, request
 
 
-result_folder = ('static/result')
+result_folder = 'static/result'
 download_folder = 'static/download'
 
 if not os.path.exists(result_folder):
