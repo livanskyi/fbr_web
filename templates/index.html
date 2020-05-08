@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        function showChecked(check_id, block_id, block2){
+            var checkBox = document.getElementById(check_id);
+            var block = document.getElementById(block_id);
+
+            if (checkBox.checked == true){
+                block.style.display = "block"
+                document.getElementById(block2).style.backgroundColor = "#b3ffcc";
+            } else {
+                block.style.display = "none";
+                document.getElementById(block2).style.backgroundColor = "#ffe8e8";
+            }
+        };
+        function showNext(next_id){
+            document.getElementById(next_id).style.display = "block";
+        };
+        function showNew(one_id, two_id, b_id){
+            document.getElementById(one_id).style.display = "block";
+            document.getElementById(two_id).style.color = "#000";
+            document.getElementById(b_id).style.display = "none";
+        };
+        function enableButton(id){
+            document.getElementById(id).disabled = false;
+            document.getElementById(id).style.backgroundColor = "#6fc97b";
+        };
+
+
+
+
+    </script>
+    <title>Football ads</title>
+    <style type="text/css">
+    body{
+        background-color: #fff;
+        background-image: url('https://static.vecteezy.com/system/resources/thumbnails/000/544/150/original/180228_11_White_abstract_background_vector_01.jpg');
+        font-family: "Courier New", Courier, monospace;
+    {
+
+    </style>
+</head>
+<body>
+<h2 align="center">Football banners replacement</h2>
+<div>
+    <form action="/upload-files" method="POST" enctype="multipart/form-data">
+    <ol>
+        <li>
+            <div>
+                <h3>Choose video</h3>
+                <div id="video_block" class="main_div">
+                    <div style="background-color: #fff; padding:10px; border-radius:10px;" >
+                        <div style="padding:10px">
+                            <label for="vid" style="font-size:14px; font-style:italic;">Select your video<br></label>
+                            <input name="video" style="padding:20px" id="vid" type="file" value="Choose file" onclick="showNext('next_1')" required>
+                        </div>
+                    </div>
+                    <div id="next_1" style="display:none"><br>
+                        <input style="padding:3px; background-color:#6fc97b; border-radius:10px; font-size: 15px; border-width:1px" type="button" value="  Continue  " onclick="showNew('banners_block', 'li2', 'next_1')">
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li id="li2" style="color: #c9c9c9;">
+            <div>
+                <h3>Select banners to be replaced and choose logos to insert</h3>
+                <div id="banners_block" style="display:none;">
+                    <div style="border-radius:10px; background-color: #fff; padding:10px">
+                    <div id="msd" style="background-color: #ffe8e8; padding:5px; border-radius:5px">
+                        <input type="checkbox" id="mastercard" onclick="showChecked('mastercard', 'mastercard_block', 'msd')">
+                        <label for="mastercard">Mastercard</label>
+                        <div id="mastercard_block" style="display:none">
+                            <div style="padding:10px">
+                                <label for="ms" style="font-size:14px; font-style:italic">Select your logo:</label>
+                                <input name="3_ms_logo" id="ms"  type="file" value="Choose file" style="padding:20px">
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div id="gpd" style="background-color: #ffe8e8; padding:5px; border-radius:5px">
+                        <input type="checkbox" id="gazprom" onclick="showChecked('gazprom', 'gazprom_block', 'gpd')">
+                        <label for="gazprom">Gazprom</label>
+                        <div id="gazprom_block" style="display:none">
+                            <div style="padding:10px">
+                                <label for="gp" style="font-size:14px; font-style:italic">Select your logo:</label>
+                                <input name="1_gp_logo" id="gp"  type="file" value="Choose file" style="padding:20px">
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div id="nsd" style="background-color: #ffe8e8; padding:5px; border-radius:5px">
+                        <input type="checkbox" id="nissan" onclick="showChecked('nissan', 'nissan_block', 'nsd')">
+                        <label for="nissan">Nissan</label>
+                        <div id="nissan_block" style="display:none">
+                            <div style="padding:10px">
+                                <label for="ns" style="font-size:14px; font-style:italic">Select your logo:</label>
+                                <input name="4_ns_logo" id="ns"  type="file" value="Choose file" style="padding:20px">
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div id="ppd" style="background-color: #ffe8e8; padding:5px; border-radius:5px">
+                        <input type="checkbox" id="pepsi" onclick="showChecked('pepsi', 'pepsi_block', 'ppd')">
+                        <label for="pepsi">Pepsi</label>
+                        <div id="pepsi_block" style="display:none">
+                            <div style="padding:10px">
+                                <label for="pp" style="font-size:14px; font-style:italic">Select your logo:</label>
+                                <input name="5_pp_logo" id="pp"  type="file" value="Choose file" style="padding:20px">
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div id="hkd" style="background-color: #ffe8e8; padding:5px; border-radius:5px">
+                        <input type="checkbox" id="heineken" onclick="showChecked('heineken', 'heineken_block', 'hkd')">
+                        <label for="heineken">Heineken</label>
+                        <div id="heineken_block" style="display:none">
+                            <div style="padding:10px">
+                                <label for="hk" style="font-size:14px; font-style:italic">Select your logo:</label>
+                                <input name="2_hk_logo" id="hk"  type="file" value="Choose file" style="padding:20px">
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div id="pld" style="background-color: #ffe8e8; padding:5px; border-radius:5px">
+                        <input type="checkbox" id="playstation" onclick="showChecked('playstation', 'playstation_block', 'pld')">
+                        <label for="playstation">Playstation</label>
+                        <div id="playstation_block" style="display:none">
+                            <div style="padding:10px">
+                                <label for="pl" style="font-size:14px; font-style:italic">Select your logo:</label>
+                                <input name="6_pl_logo" id="pl"  type="file" value="Choose file" style="padding:20px">
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div id="next_2" style="display:block"><br>
+                        <input style="padding:3px; background-color:#6fc97b; border-radius:10px; font-size: 15px; border-width:1px" type="button" value="  Continue  " onclick="showNew('time_block', 'li3', 'next_2')">
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li id="li3" style="color: #c9c9c9;">
+            <div>
+                <h3>Choose time intervals for replacement</h3>
+                <div id="time_block" style="display:none">
+                    <div style="background-color: #fff; padding:20px; border-radius:10px;">
+                        <div >
+                            <p style="font-size:14px; font-style:italic">Set time intervals</p>
+                            <div style="padding-bottom:10px">
+                                <input name="time_1" size="4" style="font-style:italic;" placeholder="00:00">
+                                <input name="time_2" size="4" style="font-style:italic;" placeholder="90:00">
+                            </div>
+
+                        </div>
+                    </div><br>
+                    <input style="padding:3px; background-color:#6fc97b; border-radius:10px; font-size: 15px; border-width:1px" type="button" value="  Done  " onclick="enableButton('f_but')">
+                </div>
+            </div>
+        </li>
+    </ol>
+    <div align="center" style="display:block"><br>
+        <button id="f_but" style="padding:10px; background-color:#c9f5cf; border-radius:15px; font-size: 15px; font-family:monospace; allign:middle; border-width:1px" type="submit" disabled>Begin detection and replacement</button>
+    </div>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        function redirect(url){
+        window.location.replace(url);
+        }
+    </script>
+    <title>Result Video</title>
+    <style type="text/css">
+    body{
+        background-color: #fff;
+        background-image: url('https://static.vecteezy.com/system/resources/thumbnails/000/544/150/original/180228_11_White_abstract_background_vector_01.jpg');
+        font-family: "Courier New", Courier, monospace;
+    }
+
+    </style>
+</head>
+<body>
+<div align="center" style="padding:30px">
+<div align="center" style="background-color: #fff; width: 60%; border-radius:20px; padding:10px">
+    <h2>The video was successfully processed</h2>
+    <a href= {{ result_video_link }} download>
+        <button style="padding:10px 60px; background-color:#6fc97b; border-radius:15px; font-size: 15px; font-family:monospace; allign:middle; border-width:1px" onclick=redirect("/finish")>Download</button>
+    </a>
+</div>
+</body>
+</html>
