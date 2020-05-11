@@ -27,6 +27,16 @@
             document.getElementById(id).disabled = false;
             document.getElementById(id).style.backgroundColor = "#6fc97b";
         };
+        var time_counter = 0
+
+        function addTime(){
+            time_counter ++;
+            document.getElementById('interval_counter').value = time_counter
+            var intElem = document.createElement("LI");
+            intElem.innerHTML = "<input placeholder='00:00' size='4' style='margin-right:20px' type='text' name='time_beg_" + time_counter +"'><input style='margin-bottom:10px' size='4' placeholder='90:00' type='text' name='time_end_" + time_counter +"'>";
+            document.getElementById("interList").appendChild(intElem);
+
+        };
 
 
 
@@ -148,8 +158,11 @@
                         <div >
                             <p style="font-size:14px; font-style:italic">Set time intervals</p>
                             <div style="padding-bottom:10px">
-                                <input name="time_1" size="4" style="font-style:italic;" placeholder="00:00">
-                                <input name="time_2" size="4" style="font-style:italic;" placeholder="90:00">
+                                <ul id="interList" type="square" style="padding:20px">
+                                    <input name="interval_counter" id="interval_counter" type="text" style="display:none">
+
+                                </ul>
+                                <input style="border-radius:5px; border-width:1px" type="button" value="Add interval" onclick="addTime()">
                             </div>
 
                         </div>
